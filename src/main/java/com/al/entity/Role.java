@@ -1,7 +1,7 @@
 package com.al.entity;
 
 public enum Role {
-USER,
+CUSTOMER,
 MANAGER,
 VISITOR,
 ADMIN

@@ -1,6 +1,7 @@
 package com.al.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -13,6 +14,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
@@ -66,4 +68,7 @@ public class Loan {
 	@ManyToOne
 	@JoinColumn(referencedColumnName = "id",name="account_id")
 	private Account account;
+	
+	@OneToMany(mappedBy = "loan")
+	private List<LoanEMI> emis;
 }

@@ -20,7 +20,9 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Version;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.Setter;
 
@@ -28,6 +30,8 @@ import lombok.Setter;
 @Table(name="account_jpa")
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Account {
 
 	@Id
@@ -35,9 +39,11 @@ public class Account {
 	@GeneratedValue(generator = "accountSeq",strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
+	@NonNull
 	@Enumerated(EnumType.STRING)
 	private AccountType type;
 	
+	@NonNull
 	private Double balance;
 	
 	@NonNull
@@ -69,4 +75,7 @@ public class Account {
 	
 	@OneToMany(mappedBy = "account")
 	private List<AccountLedger> accountLedgers;
+	
+	@OneToMany()
+	private List<Loan> loans;
 }

@@ -1,0 +1,31 @@
+package com.al.entity;
+
+public enum LogAction {
+
+    //  Authentication Logs
+    LOGIN_SUCCESS,
+    LOGIN_FAILED,
+    LOGOUT,
+    SESSION_EXPIRED,
+    PASSWORD_CHANGED,
+    PASSWORD_RESET_REQUESTED,
+
+    //  User Activity Logs
+    USER_REGISTERED,
+    USER_PROFILE_VIEWED,
+    USER_PROFILE_UPDATED,
+    USER_DELETED,
+    USER_ROLE_CHANGED,
+
+    //  Security Logs
+    UNAUTHORIZED_ACCESS_ATTEMPT,
+    ACCESS_DENIED,
+    SUSPICIOUS_ACTIVITY,
+    MULTIPLE_FAILED_LOGINS,
+
+    //  System Logs
+    SYSTEM_START,
+    SYSTEM_SHUTDOWN,
+    CONFIG_LOADED,
+    SERVICE_RESTARTED
+}
